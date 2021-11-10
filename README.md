@@ -2,7 +2,7 @@
 A python application for streaming Ethereum data to a bSQL database. 
 
 ## main.py
-The script is composed of 4 methods:
+The script is composed of 3 methods:
 
 `main` Creates a new web3 filter for the latest block and begins the loop, specifying at what interval the loop will run (every 2 seconds)
 
