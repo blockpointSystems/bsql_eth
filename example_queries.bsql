@@ -1,0 +1,16 @@
+-- MDB IDE V1.0.0
+
+-- Begin using the eth database
+USE eth;
+
+-- Run a validity check to verify that our data hasn't been tampered with
+CHECK VALIDITY;
+
+-- Get the largest and smallest block from the data.
+SELECT MAX(transaction_count) AS max_transaction, MIN(transaction_count) AS min_transactions FROM blocks;
+
+-- Grab the average transaction fee and the duration in hours
+SELECT AVG(FLOAT64(base_fee_per_gas)) AS avg_gas_price, HOUR(MAX(time)) - HOUR(MIN(time)) as hours_elapsed FROM blocks;
+
+-- Find the block with the most difficulty
+SELECT MAX(difficulty) AS max_difficulty, number FROM blocks;
